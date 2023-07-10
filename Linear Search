@@ -1,0 +1,6 @@
+#python linear sesarch
+data=input("Enter Series of Number:")
+val=input("Enter Value to Search:")
+for i in range(len(data)):
+    if val==data[i]:
+        print("value Found at:",data[i],"and Your Number was",val)
