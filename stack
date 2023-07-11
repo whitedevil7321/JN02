@@ -1,0 +1,89 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#define Size 20
+using namespace std;
+
+class Stack{
+    int data[Size];
+    int top;
+      
+      
+    public:
+        Stack(){
+            top=-1;
+        
+        }
+        void push(int element){
+                      
+           if(isFull()==1){
+               cout<<"Stack is Full";
+               
+               
+           }else    
+            data[++top]=element;
+        }
+        
+        int pop(){
+            if(isEmpty()==1){
+                return -1;
+            }else{
+                return data[top--];}
+        }
+        int isEmpty(){
+            if(top==-1)
+                return 1;
+            else
+                return 0;
+        }
+        int isFull(){
+            if(top==Size-1){
+                return 1;
+                cout<<"Stack is Full";
+            }
+            else{
+                return 0;
+            }
+        }
+        int peek(){
+            if(isEmpty()==-1){
+                return -1;
+            }else
+                return data[top];
+        }
+        
+        
+
+
+
+
+
+};
+
+
+
+int main()
+{
+    cout<<"Stack Implementation \n";
+    Stack st;
+    st.push(10);
+    st.push(20);
+    cout<<"Stack is empty?"<<st.isEmpty()<<"\n";
+    
+    cout<<"Stack is Full?"<<st.isFull()<<"\n";
+    
+    cout<<"Element is at top Position"<<st.peek()<<"\n";
+    cout<<"Element removed from the Stack"<<st.pop()<<"\n";
+    cout<<"Element removed from the Stack"<<st.pop()<<"\n";
+    cout<<"Element removed from the Stack"<<st.pop()<<"\n";
+    
+
+
+    return 0;
+}
