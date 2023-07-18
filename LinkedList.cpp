@@ -85,6 +85,27 @@ void deletion(node* &head,int key){
     
     temp->next=temp->next->next;
 }
+
+
+node* reverse(node* &head){
+    node* prePtr=NULL;
+    node* currPtr=head;
+    node* nextPtr;
+    while(currPtr!=NULL){
+        nextPtr=currPtr->next;
+        currPtr->next=prePtr;
+        
+        
+        
+        
+        prePtr=currPtr;
+        currPtr=nextPtr;
+        
+        
+    }
+    return prePtr;
+    
+}
 int main()
 {node* head=NULL;
 
@@ -98,6 +119,8 @@ int main()
        cout<<search(head,7);
        deletion(head,1);
        disply(head);
+       node* newhead=reverse(head);
+       disply(newhead);
         
     return 0;
     
